@@ -1,16 +1,20 @@
 <?php
 
 namespace app\controller;
+use app\core\Controller;
 
 /**
  * Controller Padrão
  *
  * @author Elton Marques
  */
-class HomeController {
+class HomeController extends Controller {
     
     public function index(){
-        echo 'Método index do Controller Padrão';
+        
+        $dados["view"] = "home";
+        $this->load('template', $dados);
+        
     }
     
 }

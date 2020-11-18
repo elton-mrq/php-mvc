@@ -9,9 +9,9 @@ namespace app\core;
  */
 class Controller {
     
-    public function load($view, $viewDados = []){
-        extract($viewDados);
-        require 'app/views/' . $view . '.php';
+    public function load($viewName, $viewData = []){
+        extract($viewData);
+        require 'app/views/' . $viewName . '.php';
     }
     
 }

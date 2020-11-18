@@ -9,7 +9,7 @@ use \PDOException;
  *
  * @author Elton Marques
  */
-class Database {
+abstract class Database {
     
     protected $connection;
     
@@ -21,7 +21,7 @@ class Database {
     public function setConnection(){
         
         try{
-            $this->connection = PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
+            $this->connection = new PDO('mysql:host='.HOST.';dbname='.DBNAME, USER, PASS);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $ex) {
            return $ex->getMessage();
